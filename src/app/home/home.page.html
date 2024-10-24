@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-text *ngIf="api.cargando | async" >Cargando.....</ion-text>
+  <div *ngIf="losDatos" >
+    <ion-text>Skip: {{ losDatos.skip }} </ion-text>
+    <ion-text>Limit: {{ losDatos.limit }} </ion-text>
+    <ion-text>Total: {{ losDatos.total }} </ion-text>
+    <ion-button (click)="api.obtenerProductos30Siguientes()" >Cambiar página</ion-button>
+  </div>
+</ion-content>
